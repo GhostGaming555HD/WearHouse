@@ -1,0 +1,35 @@
+﻿@page
+@model WearHousee.Pages.Admin.products.IndexModel
+@{
+}
+
+<h2 class="text-center mb-5">Product Categories</h2>
+
+<div class="row mb-5">
+    <div class="col">
+        <a class='btn btn-primary' href="/Admin/products/Create">New Product</a>
+    </div>
+    <div class="col">
+
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>No</th>
+        <th>Category</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach(var product in Model.Products)
+    {
+        <tr>
+            <td>@product.no</td>
+            <td>@product.category</td>
+            <td style="white-space:nowrap">
+                <a class="btn btn-primary btn-sm" href="/Admin/products/Edit?id=@product.no">Edit</a>
+                <a class="btn btn-danger btn-sm" href="/Admin/product/Delete?id=@product.no">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
